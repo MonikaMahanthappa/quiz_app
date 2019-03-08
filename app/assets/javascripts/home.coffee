@@ -5,3 +5,7 @@
 window.startQuiz = () ->
   $('.quiz-section').show()
   $('.quiz-start-btn').hide()
+
+window.showAnswer = (id) ->
+  $('#answer-' + id).show()
+  $('#answer-btn-' + id).hide()

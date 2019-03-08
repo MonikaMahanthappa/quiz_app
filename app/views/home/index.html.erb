@@ -8,7 +8,10 @@
         <span><%= index+1 %>. </span>
         <span><%= question.description %></span>
       </div>
-      <div><%= question.answer %></div>
+      <div>
+        <button type="button" class="answer-btn" id="answer-btn-<%= index%>" onclick="showAnswer(<%= index%>)">Click to view Answer</button>
+        <div id="answer-<%= index%>" style="display: none"><%= question.answer %></div>
+      </div>
     </div>
   <% end %>
 </div>
