@@ -3,8 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 window.startQuiz = () ->
-  $('.quiz-section').show()
-  $('.quiz-start-btn').hide()
+#  $('.quiz-section').show()
+  document.getElementById('quiz-section').style.display = 'block';
+#  $('.quiz-start-btn').hide()
+  document.getElementById('quiz-start-btn').style.display = 'none';
 
 window.showAnswer = (id) ->
   $('#answer-' + id).show()

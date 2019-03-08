@@ -1,16 +1,17 @@
 <h1>Welcome!</h1>
 <h3>Ready for the Quiz?</h3>
-<button type="button" class="quiz-start-btn" onclick="startQuiz()">Start</button>
-<div class="quiz-section" style="display: none">
+<button type="button" id="quiz-start-btn" onclick="startQuiz()">Start</button>
+<div id="quiz-section" style="display: none">
   <% @questions.each_with_index do |question, index| %>
-    <div>
-      <div>
-        <span><%= index+1 %>. </span>
-        <span><%= question.description %></span>
-      </div>
-      <div>
-        <button type="button" class="answer-btn" id="answer-btn-<%= index%>" onclick="showAnswer(<%= index%>)">Click to view Answer</button>
-        <div id="answer-<%= index%>" style="display: none"><%= question.answer %></div>
+    <div class="card bg-light mb-2" style="width: 60rem">
+      <div class="card-body">
+        <h6 class="card-title">
+          <%=  "#{index+1}. " + "#{question.description}"%>
+        </h6>
+        <div class="card-text">
+          <button type="button" class="answer-btn" id="answer-btn-<%= index%>" onclick="showAnswer(<%= index%>)">Click to view Answer</button>
+          <div id="answer-<%= index%>" style="display: none">Answer: <%= question.answer %></div>
+        </div>
       </div>
     </div>
   <% end %>
