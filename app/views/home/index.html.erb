@@ -1,1 +1,14 @@
-<h1>Ready for quiz</h1>
+<h1>Welcome!</h1>
+<h3>Ready for the Quiz?</h3>
+<button type="button" class="quiz-start-btn" onclick="startQuiz()">Start</button>
+<div class="quiz-section" style="display: none">
+  <% @questions.each_with_index do |question, index| %>
+    <div>
+      <div>
+        <span><%= index+1 %>. </span>
+        <span><%= question.description %></span>
+      </div>
+      <div><%= question.answer %></div>
+    </div>
+  <% end %>
+</div>
